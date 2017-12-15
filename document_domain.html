@@ -9,11 +9,11 @@
     <title>Document</title>
 </head>
 <body>
-<h3>js hook test bed</h3>
-<ul>
-    <li>
-        <a href="./document_domain.html">document.domain</a>
-    </li>
-</ul>
+<h3>test document.domain read and write</h3>
+<script>
+    var domain = document.domain;
+    console.log(domain);
+    document.domain = 'github.io';
+</script>
 </body>
 </html>
