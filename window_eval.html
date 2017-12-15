@@ -9,14 +9,12 @@
     <title>Document</title>
 </head>
 <body>
-<h3>js hook test bed</h3>
-<ul>
-    <li>
-        <a href="./document_domain.html">document.domain</a>
-    </li>
-    <li>
-        <a href="./window_eval.html">window.eval</a>
-    </li>
-</ul>
+<h3>test window.eval</h3>
+<script>
+    eval('var a = "case 1"');
+    window.eval('var a = "case 2"');
+    var bak = eval;
+    bak('var a = "case 3"');
+</script>
 </body>
 </html>
