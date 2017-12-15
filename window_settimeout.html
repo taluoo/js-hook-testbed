@@ -9,17 +9,12 @@
     <title>Document</title>
 </head>
 <body>
-<h3>js hook test bed</h3>
-<ul>
-    <li>
-        <a href="./document_domain.html">document.domain</a>
-    </li>
-    <li>
-        <a href="./window_eval.html">window.eval</a>
-    </li>
-    <li>
-        <a href="./window_settimeout.html">window.setTimeout</a>
-    </li>
-</ul>
+<h3>test window.setTimeout</h3>
+<script>
+    setTimeout('console.log("str to code 1")', 1000);
+    window.setTimeout('console.log("str to code 2")', 1000);
+    var bak = setTimeout;
+    bak('console.log("str to code 3")', 1000);
+</script>
 </body>
 </html>
