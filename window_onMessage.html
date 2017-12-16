@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="referrer" content="no-referrer">
+    <title>Document</title>
+</head>
+<body>
+
+<h3>test window listen message event</h3>
+
+<script>
+    window.addEventListener('message', onMessage);
+
+    function onMessage(event) {
+        var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
+        if (origin !== "http://example.org:8080")
+            return;
+        // ...
+    }
+</script>
+</body>
+</html>
