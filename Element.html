@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="referrer" content="no-referrer">
+    <title>Document</title>
+</head>
+<body>
+<h3>test Element</h3>
+需要测试：innerHTML、outerHTML、insertAdjacentHTML
+
+<!-- Element.innerHTML-->
+<script>
+    let ele = document.createElement('div');
+    ele.innerHTML = "<img src=x onerror='console.log(\"Element.innerHTML sink\")'>";
+    document.head.appendChild(ele);
+    var tmp = ele.innerHTML;
+    console.log(tmp)
+</script>
+
+<!-- Element.outerHTML-->
+<script>
+    let outerEle = document.createElement('div');
+    outerEle.classList.add('outer');
+    let innerEle = document.createElement('div');
+    innerEle.classList.add('inner');
+    outerEle.appendChild(innerEle);
+    innerEle.outerHTML = "<img src=x onerror='console.log(\"Element.outerHTML sink\")'>";
+    document.head.appendChild(outerEle);
+    tmp = innerEle.outerHTML;
+</script>
+
+<!-- Element.insertAdjacentHTML -->
+<script>
+    let ele2 = document.createElement('div');
+    ele2.insertAdjacentHTML('beforeend', "<img src=x onerror='console.log(\"Element.insertAdjacentHTML sink\")'>");
+    //    document.head.appendChild(ele2); // 不用添加到页面上，都可以执行
+
+</script>
+
+
+</body>
+</html>
