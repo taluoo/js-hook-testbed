@@ -10,7 +10,7 @@
 </head>
 <body>
 <h3>test HTMLScriptElement</h3>
-需要测试：src, text, textContent, innerText
+需要测试：src, text, textContent, innerText, insertAdjacentText
 <!--script 标签 -->
 <script>
     let script1 = document.createElement('script');
@@ -35,6 +35,11 @@
     script4.textContent = 'console.log("script.textContent")'; // SET textContent
     document.head.appendChild(script4);
     tmp = script4.textContent; // GET textContent
+</script>
+<script>
+    let script5 = document.createElement('script');
+    script5.insertAdjacentText('beforeend', 'console.log("script.insertAdjacentText")'); // afterbegin, beforeend
+    document.head.appendChild(script5)
 </script>
 
 
