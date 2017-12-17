@@ -9,16 +9,19 @@
     <title>Document</title>
 </head>
 <body>
-<h3>test window.postMessage</h3>
-<iframe src="window_listen_message.html" frameborder="1"></iframe>
-<iframe src="window_onmessage.html" frameborder="1"></iframe>
+
+<h3>test window.onmessage</h3>
+
 <script>
-    window.addEventListener('load', function () {
-        window.frames[0].postMessage('foo', '*');
-        window.frames[1].postMessage('bar', '*');
-    });
+    window.onmessage = function () {
+        console.log(event.data);
+        var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
+        if (origin !== "http://example.org:8080")
+            return;
+        // ...
+    };
 
+    var tmp = window.onmessage;
 </script>
-
 </body>
 </html>

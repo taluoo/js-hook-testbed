@@ -16,6 +16,7 @@
     window.addEventListener('message', onMessage);
 
     function onMessage(event) {
+        console.log(event.data);
         var origin = event.origin || event.originalEvent.origin; // For Chrome, the origin property is in the event.originalEvent object.
         if (origin !== "http://example.org:8080")
             return;
